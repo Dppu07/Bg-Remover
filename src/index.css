@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: 'Outfit', sans-serif;
+}
+.slider{
+  -webkit-appearance: none;
+  height:100%;
+  background: transparent;
+  }
+.slider::-webkit-slider-thumb{
+  appearance: none;
+  width: 30px;
+  min-height: 30px;
+  background-image: url(./assets/slide_icon.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  }
+.bg-layer{
+  background-image:url(./assets/bg_layer.png);
+  }
