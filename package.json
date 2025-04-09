@@ -1,10 +1,12 @@
 {
-  "name": "react-javascript",
+  "name": "bg-remover",
   "version": "1.0.0",
   "type": "module",
   "description": "React TypeScript on Replit, using Vite bundler",
   "scripts": {
-    "dev": "vite",
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm run dev",
+    "dev": "npm run client & npm run server",
     "build": "vite build",
     "preview": "vite preview"
   },
