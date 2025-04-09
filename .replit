@@ -18,15 +18,3 @@ publicDir = "dist"
 localPort = 5173
 externalPort = 8000
 exposeLocalhost = true
-
-[workflows]
-runButton = "dev"
-
-[[workflows.workflow]]
-name = "dev"
-author = 31893535
-mode = "sequential"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "cd client && npm run dev"
