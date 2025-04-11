@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.26.1",
+    "axios": "^1.8.4",
     "axios-retry": "^4.5.0",
     "dotenv": "^16.4.7",
     "dotenv-defaults": "^5.0.2",
