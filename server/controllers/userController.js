@@ -70,17 +70,16 @@ const clerkWebhooks = async (req, res) => {
 // Api controller function to get user available credit data
 const userCredits = async (req, res) => {
   try {
-    const clerkId = req.user.id;
+    
+    const { clerkId } = req.body;
+    
     const userData = await userModel.findOne({ clerkId });
     
-    if (!userData) {
-      return res.status(404).json({ success: false, message: "User not found" });
-    }
-    
     res.json({ success: true, credits: userData.creditBalance });
+  
   } catch (error) {
-    console.error("Error in userCredits:", error);
-    res.status(500).json({ success: false, message: error.message });
+    console.log(error.message);
+    res.json({ success: false, message: error.message });
   }
 };
 
