@@ -15,20 +15,22 @@ const AppContextProvider = (props) => {
   const loadCreditsData = async () => {
     try {
       const token = await getToken();
-      const {data} = await axios.get(`${backendUrl}/api/user/credits`, {
+      const response = await axios.get(`${backendUrl}/api/user/credits`, {
         headers: {
-          Authorization: `Bearer ${token}`
-        }
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
+        withCredentials: true
       });
 
-      if (data.success) {
-        setCredit(data.credits);
+      if (response.data.success) {
+        setCredit(response.data.credits);
       } else {
-        toast.error("Failed to load credits");
+        toast.error(response.data.message || "Failed to load credits");
       }
     } catch (error) {
       console.error("Error loading credits:", error);
-      toast.error("Unable to connect to server");
+      toast.error(error.response?.data?.message || "Unable to connect to server");
     }
   }
 

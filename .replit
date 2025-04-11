@@ -31,3 +31,19 @@ externalPort = 80
 
 [[ports]]
 localPort = 5175
+
+[workflows]
+runButton = "Dev"
+
+[[workflows.workflow]]
+name = "Dev"
+author = 31893535
+mode = "parallel"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd server && npm run server"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
